@@ -1,5 +1,5 @@
 $who_user = whoami /user
 $who_fqdn = whoami /fqdn
-$exfilpath = [Environment]::GetFolderPath("Desktop") + "\exfil.txt"
-$who_user >> $exfilpath
-$who_fqdn >> $exfilpath
+$exfilpath = Write-Output $HOME\Documents\exfil.txt
+Write-Output "---COMMAND---" "whoami /user:" "---OUTPUT---" $who_user "" >> $exfilpath
+Write-Output "---COMMAND---" "whoami /fqdn:" "---OUTPUT---" $who_fqdn "" >> $exfilpath
